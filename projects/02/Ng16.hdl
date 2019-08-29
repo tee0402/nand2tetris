@@ -1,0 +1,16 @@
+// This file is part of www.nand2tetris.org
+// and the book "The Elements of Computing Systems"
+// by Nisan and Schocken, MIT Press.
+// File name: projects/02/Ng16.hdl
+
+/**
+ * 1 if input is negative (in[15] is 1).
+ */
+
+CHIP Ng16 {
+    IN in[16];
+    OUT out;
+
+    PARTS:
+	And(a=in[15], b=true, out=out);
+}
