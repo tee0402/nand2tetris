@@ -14,9 +14,8 @@ CHIP Mux {
     OUT out;
 
     PARTS:
-    Xor(a=sel, b=true, out=selecta);
-	Xor(a=sel, b=false, out=selectb);
+    Not(in=sel, out=selecta);
 	And(a=a, b=selecta, out=aifselected);
-	And(a=b, b=selectb, out=bifselected);
+	And(a=b, b=sel, out=bifselected);
 	Or(a=aifselected, b=bifselected, out=out);
 }
